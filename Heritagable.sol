@@ -7,7 +7,7 @@ contract Heritagable {
     uint256 public heirTime;
 
     constructor(address _heir) {
-        require(msg.sender != heir, "Only the heir can call this.");
+        require(msg.sender != _heir, "Owner cannot be heir");
         require(_heir != address(0), "Heir cannot be the zero address.");
 
         owner = msg.sender;
